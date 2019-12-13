@@ -8,8 +8,9 @@ package proyectoitvsegurocoche;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import modelo.ModeloCoches;
-import vista.VistaConsultar;
+import vista.VistaConsultarTabla;
 import vista.VistaPrincipal;
+import vista.VistaVerITV;
 
 /**
  *
@@ -23,16 +24,18 @@ public class ProyectoITVSeguroCoche {
     public static void main(String[] args) {
         
         JFrame ventana = new JFrame("Proyecto");
-        VistaConsultar vistaConsultar = new VistaConsultar();
+        VistaConsultarTabla vistaConsultar = new VistaConsultarTabla();
+        VistaVerITV verITV = new VistaVerITV();
         ModeloCoches modelo = new ModeloCoches();
         
         //ControladorPrincipal controlador = new ControladorPrincipal(ventana, new ContenedorUsuarios());
-        ventana.add(vistaConsultar);
+        ventana.add(verITV);
         
         //vistaPrincipal.addControlador(controlador);
         
         ventana.setVisible(true);
-        ventana.pack();
+        ventana.setSize(600, 400);
+        //ventana.pack();
         ventana.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
     

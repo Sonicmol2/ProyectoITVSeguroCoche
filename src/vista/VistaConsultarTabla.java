@@ -13,18 +13,18 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author DAM-2
  */
-public class VistaConsultar extends JScrollPane{
+public class VistaConsultarTabla extends JScrollPane{
     
     private JTable tabla;
     private DefaultTableModel modeloCoches;
     String[] cabecera = {"CodCoche", "Marca", "Modelo", "Matricula", "Tipo Revision", "Fecha ultima revisión", "Fecha nueva revisión", "Fecha ultimo seguro", "Precio seguro"};
     
-    public VistaConsultar(){
+    public VistaConsultarTabla(){
         
        tabla = new JTable();
        modeloCoches = new DefaultTableModel();
        tabla.setModel(modeloCoches);
-        addcolumnas(cabecera);
+       addcolumnas(cabecera);
        
        this.setViewportView(tabla);
     }
@@ -40,4 +40,6 @@ public class VistaConsultar extends JScrollPane{
     public void addFila(Object[] fila){
         modeloCoches.addRow(fila);
     }
+    
+    
 }
