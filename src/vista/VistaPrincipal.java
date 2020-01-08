@@ -38,12 +38,11 @@ public class VistaPrincipal extends javax.swing.JPanel {
         setBackground(new java.awt.Color(255, 153, 0));
         setLayout(new java.awt.BorderLayout());
 
-        PanelBotones.setBackground(new java.awt.Color(204, 255, 204));
+        PanelBotones.setBackground(new java.awt.Color(229, 250, 255));
         PanelBotones.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "ITVSEGURO", javax.swing.border.TitledBorder.LEFT, javax.swing.border.TitledBorder.TOP));
         PanelBotones.setPreferredSize(new java.awt.Dimension(520, 400));
         PanelBotones.setLayout(new java.awt.GridBagLayout());
 
-        botonAlta.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/IconoCocheNuevoFormatoOriginal.png"))); // NOI18N
         botonAlta.setText("ALTA");
         botonAlta.setToolTipText("Dar de alta nuevo coche");
         botonAlta.setPreferredSize(new java.awt.Dimension(200, 50));
@@ -62,7 +61,6 @@ public class VistaPrincipal extends javax.swing.JPanel {
         gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_END;
         PanelBotones.add(botonSalir, gridBagConstraints);
 
-        botonConsultar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/iconoBuscarSinNuevaBuena.jpg"))); // NOI18N
         botonConsultar.setText("CONSULTAR");
         botonConsultar.setToolTipText("Consultar coches ya introducidos");
         botonConsultar.setPreferredSize(new java.awt.Dimension(200, 50));

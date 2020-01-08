@@ -17,7 +17,7 @@ public class VistaConsultarTabla extends JScrollPane{
     
     private JTable tabla;
     private DefaultTableModel modeloCoches;
-    String[] cabecera = {"CodCoche", "Marca", "Modelo", "Matricula", "Tipo Revision", "Fecha ultima revisión", "Fecha nueva revisión", "Fecha ultimo seguro", "Precio seguro"};
+    String[] cabecera = {"CodCoche", "Marca", "Modelo", "Matricula", "Tipo Revision", "Fecha ultima revisión", "Fecha nueva revisión"};
     
     public VistaConsultarTabla(){
         

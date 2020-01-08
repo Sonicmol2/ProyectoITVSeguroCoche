@@ -5,12 +5,14 @@
  */
 package proyectoitvsegurocoche;
 
+import java.text.ParseException;
 import javax.swing.JFrame;
-import javax.swing.JPanel;
-import modelo.ModeloCoches;
+import modelo.ModeloVehiculos;
+;
 import vista.VistaConsultarTabla;
-import vista.VistaPrincipal;
-import vista.VistaVerITV;
+import vista.VistaVehiculos;import vista.VistaConsultarTabla;
+import vista.VistaVehiculos;
+
 
 /**
  *
@@ -20,16 +22,18 @@ public class ProyectoITVSeguroCoche {
 
     /**
      * @param args the command line arguments
+     * @throws java.text.ParseException
      */
-    public static void main(String[] args) {
+    public static void main(String[] args) throws ParseException {
         
         JFrame ventana = new JFrame("Proyecto");
         VistaConsultarTabla vistaConsultar = new VistaConsultarTabla();
-        VistaVerITV verITV = new VistaVerITV();
-        ModeloCoches modelo = new ModeloCoches();
+        vista.VistaVehiculos vistaVehiculo = new VistaVehiculos();
+        
+        ModeloVehiculos modelo = new ModeloVehiculos();
         
         //ControladorPrincipal controlador = new ControladorPrincipal(ventana, new ContenedorUsuarios());
-        ventana.add(verITV);
+        ventana.add(vistaVehiculo);
         
         //vistaPrincipal.addControlador(controlador);
         

@@ -24,7 +24,7 @@
     <Container class="javax.swing.JPanel" name="PanelBotones">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="cc" green="ff" red="cc" type="rgb"/>
+          <Color blue="ff" green="fa" red="e5" type="rgb"/>
         </Property>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
@@ -45,9 +45,6 @@
       <SubComponents>
         <Component class="javax.swing.JButton" name="botonAlta">
           <Properties>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/images/IconoCocheNuevoFormatoOriginal.png"/>
-            </Property>
             <Property name="text" type="java.lang.String" value="ALTA"/>
             <Property name="toolTipText" type="java.lang.String" value="Dar de alta nuevo coche"/>
             <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
@@ -75,9 +72,6 @@
         </Component>
         <Component class="javax.swing.JButton" name="botonConsultar">
           <Properties>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/images/iconoBuscarSinNuevaBuena.jpg"/>
-            </Property>
             <Property name="text" type="java.lang.String" value="CONSULTAR"/>
             <Property name="toolTipText" type="java.lang.String" value="Consultar coches ya introducidos"/>
             <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
