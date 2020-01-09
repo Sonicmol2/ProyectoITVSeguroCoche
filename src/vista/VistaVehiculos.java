@@ -5,19 +5,35 @@
  */
 package vista;
 
+import java.awt.event.ActionListener;
+import modelo.ModeloVehiculos;
+
 /**
  *
  * @author samuel
  */
 public class VistaVehiculos extends javax.swing.JPanel {
 
-   public VistaConsultarTabla vistaTabla;
+   public modelo.ModeloVehiculos modeloTablaDatos;
    
     public VistaVehiculos() {
         initComponents();
         
-        vistaTabla = new VistaConsultarTabla();
-        this.add(vistaTabla, 0);
+        //vistaTabla = new VistaConsultarTabla();
+        //this.add(vistaTabla, 0);
+    }
+    
+    public void addcolumnas(String[] cabecera){
+        modeloTablaDatos.setColumnIdentifiers(cabecera);
+    }
+    
+    public void addFila(Object[] fila){
+        modeloTablaDatos.addRow(fila);
+    }
+    
+    public void addModelo(){
+        modeloTablaDatos = new ModeloVehiculos();
+        tablaModelo.setModel(modeloTablaDatos);
     }
 
     /**
@@ -30,30 +46,77 @@ public class VistaVehiculos extends javax.swing.JPanel {
     private void initComponents() {
 
         panelTablaVehiculos = new javax.swing.JPanel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        tablaModelo = new javax.swing.JTable();
+        jPanel1 = new javax.swing.JPanel();
+        miBean1 = new mibeanbueno.MiBean();
 
         setLayout(new java.awt.BorderLayout());
 
         panelTablaVehiculos.setBackground(new java.awt.Color(229, 250, 255));
         panelTablaVehiculos.setBorder(javax.swing.BorderFactory.createTitledBorder("Tabla datos del Vehiculo"));
 
+        tablaModelo.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane2.setViewportView(tablaModelo);
+
         javax.swing.GroupLayout panelTablaVehiculosLayout = new javax.swing.GroupLayout(panelTablaVehiculos);
         panelTablaVehiculos.setLayout(panelTablaVehiculosLayout);
         panelTablaVehiculosLayout.setHorizontalGroup(
             panelTablaVehiculosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 392, Short.MAX_VALUE)
+            .addGap(0, 449, Short.MAX_VALUE)
+            .addGroup(panelTablaVehiculosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelTablaVehiculosLayout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 449, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
         panelTablaVehiculosLayout.setVerticalGroup(
             panelTablaVehiculosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 277, Short.MAX_VALUE)
+            .addGap(0, 262, Short.MAX_VALUE)
+            .addGroup(panelTablaVehiculosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 262, Short.MAX_VALUE))
         );
 
         add(panelTablaVehiculos, java.awt.BorderLayout.CENTER);
+
+        jPanel1.setBackground(new java.awt.Color(229, 250, 255));
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(283, Short.MAX_VALUE)
+                .addComponent(miBean1, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(26, 26, 26))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(miBean1, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(25, Short.MAX_VALUE))
+        );
+
+        add(jPanel1, java.awt.BorderLayout.PAGE_END);
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private mibeanbueno.MiBean miBean1;
     private javax.swing.JPanel panelTablaVehiculos;
+    private javax.swing.JTable tablaModelo;
     // End of variables declaration//GEN-END:variables
-
 
 }

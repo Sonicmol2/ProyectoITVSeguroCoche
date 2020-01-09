@@ -13,8 +13,6 @@ import javax.swing.JPanel;
  * @author samuel
  */
 public class VistaCocheAlta extends JPanel {
-
-    public VistaConsultarTabla vistaTabla;
     
     public VistaCocheAlta() {
         initComponents();
@@ -43,7 +41,7 @@ public class VistaCocheAlta extends JPanel {
         etiquetaFechaSeguro = new javax.swing.JLabel();
         jFormattedTextFechaSeguro = new javax.swing.JFormattedTextField();
         etiquetaPrecioSeguro = new javax.swing.JLabel();
-        jFormattedTextPrecioSeguro = new javax.swing.JFormattedTextField();
+        jTextFieldPrecioSeguro = new javax.swing.JTextField();
         jPanelBotones = new javax.swing.JPanel();
         botonAceptar = new javax.swing.JButton();
         botonCancelar = new javax.swing.JButton();
@@ -100,9 +98,7 @@ public class VistaCocheAlta extends JPanel {
 
         etiquetaPrecioSeguro.setText("Precio seguro");
         jPanelFormulario.add(etiquetaPrecioSeguro);
-
-        jFormattedTextPrecioSeguro.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(java.text.NumberFormat.getCurrencyInstance())));
-        jPanelFormulario.add(jFormattedTextPrecioSeguro);
+        jPanelFormulario.add(jTextFieldPrecioSeguro);
 
         add(jPanelFormulario, java.awt.BorderLayout.CENTER);
 
@@ -152,11 +148,11 @@ public class VistaCocheAlta extends JPanel {
     private javax.swing.JFormattedTextField jFormattedTextFechaRevision;
     private javax.swing.JFormattedTextField jFormattedTextFechaSeguro;
     private javax.swing.JFormattedTextField jFormattedTextMatricula;
-    private javax.swing.JFormattedTextField jFormattedTextPrecioSeguro;
     private javax.swing.JPanel jPanelBotones;
     private javax.swing.JPanel jPanelFormulario;
     private javax.swing.JTextField jTextFieldMarca;
     private javax.swing.JTextField jTextFieldModelo;
+    private javax.swing.JTextField jTextFieldPrecioSeguro;
     private javax.swing.JComboBox<String> listaTipoRevision;
     // End of variables declaration//GEN-END:variables
     
@@ -194,6 +190,18 @@ public class VistaCocheAlta extends JPanel {
     }
     
     public Double getPrecioSeguro() {
-        return Double.parseDouble(jFormattedTextPrecioSeguro.getText());
+        
+        double numeroPrecio = 0;
+        String precio;
+        
+        precio = jTextFieldPrecioSeguro.getText();
+        
+        if(precio == null || precio.equals("")){
+            System.out.println("Error de formato del precio");
+        }
+        
+        numeroPrecio = Double.parseDouble(precio);
+      
+        return numeroPrecio;
     }
 }

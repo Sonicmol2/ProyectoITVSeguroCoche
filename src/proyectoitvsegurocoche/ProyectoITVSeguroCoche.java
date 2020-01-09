@@ -5,12 +5,17 @@
  */
 package proyectoitvsegurocoche;
 
+import com.db4o.Db4oEmbedded;
+import com.db4o.ObjectContainer;
+import com.db4o.ObjectSet;
+import com.db4o.config.EmbeddedConfiguration;
 import java.text.ParseException;
 import javax.swing.JFrame;
+import manejador.ManejadorVistaPrincipal;
 import modelo.ModeloVehiculos;
-;
-import vista.VistaConsultarTabla;
-import vista.VistaVehiculos;import vista.VistaConsultarTabla;
+import modelo.Vehiculo;
+
+import vista.VistaPrincipal;
 import vista.VistaVehiculos;
 
 
@@ -19,21 +24,20 @@ import vista.VistaVehiculos;
  * @author DAM-2
  */
 public class ProyectoITVSeguroCoche {
-
+    
     /**
      * @param args the command line arguments
      * @throws java.text.ParseException
      */
     public static void main(String[] args) throws ParseException {
-        
+       
+       
         JFrame ventana = new JFrame("Proyecto");
-        VistaConsultarTabla vistaConsultar = new VistaConsultarTabla();
-        vista.VistaVehiculos vistaVehiculo = new VistaVehiculos();
+        vista.VistaPrincipal vistaPrincipal = new VistaPrincipal();
+        manejador.ManejadorVistaPrincipal manejadorPrincipal = new ManejadorVistaPrincipal(ventana);
         
-        ModeloVehiculos modelo = new ModeloVehiculos();
-        
-        //ControladorPrincipal controlador = new ControladorPrincipal(ventana, new ContenedorUsuarios());
-        ventana.add(vistaVehiculo);
+        vistaPrincipal.addControlador(manejadorPrincipal);
+        ventana.setContentPane(vistaPrincipal);
         
         //vistaPrincipal.addControlador(controlador);
         
@@ -42,5 +46,7 @@ public class ProyectoITVSeguroCoche {
         //ventana.pack();
         ventana.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
+    
+    
     
 }

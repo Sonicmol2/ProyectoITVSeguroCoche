@@ -25,6 +25,15 @@ public class Vehiculo {
         this.fechaUltimoSeguro = fechaUltimoSeguroInicial;
         this.precioSeguro = precioSeguroInicial;
     }
+    
+    public Vehiculo(String matriculaInicial){
+        this.matricula = matriculaInicial;
+        
+    }
+    
+    public Vehiculo(){
+        
+    }
 
     public String getMarca() {
         return marca;
